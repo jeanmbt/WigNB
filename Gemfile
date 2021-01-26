@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 # OUR GEMS
 gem 'devise'
+gem 'pundit'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
