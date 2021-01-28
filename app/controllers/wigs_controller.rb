@@ -4,15 +4,8 @@ class WigsController < ApplicationController
     @wigs = policy_scope(Wig).order(created_at: :desc)
   end
 
-  def create?
-    return true
-  end
-  
-  def update?
-    record.user == user
-  end
-
-  def destroy?
-    record.user == user
+  def show
+    @wig = Wig.find(params[:id])
+    authorize @wig
   end
 end
