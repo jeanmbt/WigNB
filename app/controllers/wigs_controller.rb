@@ -1,18 +1,26 @@
 class WigsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     # @wigs = Wig.all
     @wigs = policy_scope(Wig).order(created_at: :desc)
+
   end
 
-  def create?
-    return true
+  def new
+    @wig = Wig.new
+    authorize @wig
+  end
+
+  def create
+    @wig = Wig.new(wig_params)
+    @wig.save
   end
   
-  def update?
-    record.user == user
-  end
+  private
 
-  def destroy?
-    record.user == user
+  def wig_params
+    params.require(:wig).permit(:name, :color, :description, :material, :style, :photo)
   end
 end

@@ -1,5 +1,21 @@
 <div class="container">
   <div class="cards-group row">
+
+  <!-- ADD WIG CARD -->
+
+      <div class="card card-size">
+      
+
+        <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top" %>
+
+        <div class="card-body">
+          <h5 class="card-title">ADD NEW WIG</h5>
+         
+          <%= link_to  "➕", new_wig_path %>
+        </div>
+      </div>
+
+
     <%= @wigs.each do |wig| %>
       <div class="card card-size">
         <img class="card-img-top card-img-size" src="https://www.essence.com/wp-content/uploads/2017/02/1486507932/GettyImages-140390801.jpg" alt="Card image cap">
