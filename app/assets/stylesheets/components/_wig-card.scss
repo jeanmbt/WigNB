@@ -1,6 +1,6 @@
 .card-img-size {
-  height: 200px;
-  width: 200px;
+  height: 218px;
+  width: 218px;
 }
 
 .card-size {
@@ -9,7 +9,43 @@
   margin: 5px;
 
 }
+.card {
+  background-color: #eecaf3;
+  &:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
+    box-shadow: 5px 5px 15px 5px #0000004d;
+    background-color: #ffffff;
+    transition: 0.75s;
+  }
+  a {
+    color: black;
+    background-color: #7D4187;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+  }
+}
+.new-wig-card {
+  background-color: #af97afdc ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .inside-card {
+    margin-top: 150px;
+  }
+  a {
+    background-color: transparent;
+    color: black;
+  }
+}
 
 .cards-group {
-  margin: 50px 0px; 
+  margin: 50px 0px;
+  margin-left: 90px;
+  width: auto;
+  #text {
+    display: none;
+  }
 }
+

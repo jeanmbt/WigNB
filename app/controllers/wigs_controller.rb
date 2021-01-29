@@ -21,6 +21,10 @@ class WigsController < ApplicationController
   private
 
   def wig_params
-    params.require(:wig).permit(:name, :color, :description, :material, :style, :photo)
+    params.require(:wig).permit(:name, :color, :description, :material, :style, :photo, :user_id, :created_at, :updated_at)
+  end
+
+  def days_ago
+    Time.now - @wig.created_at
   end
 end
