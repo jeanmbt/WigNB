@@ -17,12 +17,31 @@
 @import "components/search_form";
 @import "components/wig-card";
 
+// pages
+@import "new.scss";
+
 body {
   background-image:  linear-gradient(rgba(180, 171, 184, 0.911),rgba(154, 139, 161, 0.747)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
   background-color: #7D4187;
   background-size: 100%;
   background-repeat: round;
 }
-#text {
-  display: none;
+.form-container {
+  a {
+    background-color: #3e2b60;
+    background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
+    padding: 5px 5px;
+    margin-top: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    width: 100px;
+    right: 0;
+    &:hover {
+      -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
+      box-shadow: 5px 5px 15px 5px #0000004d;
+      background-color: #b347a4;
+      transition: 0.75s;
+    }
+}
 }
