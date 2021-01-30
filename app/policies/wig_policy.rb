@@ -10,16 +10,13 @@ class WigPolicy < ApplicationPolicy
     def show?
       true
     end
+
     def index?
       true
     end
 
-    def new?
-      true
-    end
-    
     def create?
-      true
+      record.user == user
     end
     
     def update?

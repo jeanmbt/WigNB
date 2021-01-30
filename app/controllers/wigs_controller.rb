@@ -20,11 +20,14 @@ class WigsController < ApplicationController
 
   def new
     @wig = Wig.new
+    @wig.user = current_user
     authorize @wig
   end
 
   def create
     @wig = Wig.new(wig_params)
+    @wig.user = current_user
+    authorize @wig
     @wig.save
   end
 

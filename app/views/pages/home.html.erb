@@ -1,34 +1,28 @@
 <div class="main-container">
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scontent-ber1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/133248991_112784727359879_1237372744980897601_n.jpg?_nc_ht=scontent-ber1-1.cdninstagram.com&_nc_cat=111&_nc_ohc=NuqDOV2axEEAX-qhZ7n&tp=1&oh=a854a19bc5842e0488b66917a00e736e&oe=603BC494);">
+  <div class="banner" style="">
     
-    <div class="container ">
-      <h1>Wignb is where you get <strong>GLAM</strong> and <strong>STUNNING</strong>!</h1>
-      <p>Upgrade your looks. Have fun.</p>
-      
-      <!--SEARCH-->
+    <div class="container">
+      <div class="content-container">
+        <h1>Wignb is where you get <strong>GLAM</strong> and <strong>STUNNING</strong>!</h1>
+        <p>Upgrade your looks. Have fun.</p>
+        <%= link_to  "I WANT WIGS!", wigs_path %>
+      </div>
+      <!--SEARCH>
 
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search[query]" id="search_query" value="blue long updo"/>
 
-          <!-- REAL SUBMIT BUTTON -->
-          <!--button name="button" type="submit" class="btn btn-flat"-->
-          <!-- DO NOT DELETE -->
-          <%= link_to  "Search", wigs_path %>
+          <button name="button" type="submit" class="btn btn-flat">
+          
           <i class="fas fa-search"></i> Search
           </button>
-        </div>
-  <% end %>
+      <% end %>
+        </div-->
 
     </div>
   </div>
 
-  <div class="about-container container border border-dark">
-    <div class="container">
-      <h1>about us</h1>
-      <p>Where does it come from?
-  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-    </div>
-  </div>
+  
 </div>
