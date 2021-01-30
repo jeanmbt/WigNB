@@ -3,6 +3,11 @@
     <div class="row">
       <div class="col-8">
         <div class="wig-show-card">
+          <% if @wig.photo.attached? %>
+            <%= cl_image_tag @wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size" %>
+          <% else %>
+            <img class="card-img-top card-img-size" src="https://www.essence.com/wp-content/uploads/2017/02/1486507932/GettyImages-140390801.jpg" alt="Card image cap">
+          <% end %>
           <h1><%= @wig.name %></h1>
           <p class="wig-show-color"><%= @wig.color %></p>
         </div>
@@ -10,7 +15,7 @@
           <h3>A bit more about this wig:</h3>
           <p><%= @wig.description %></p>
           <!-- MAP -->
-          <img class="card-img-top card-img-size" src="https://www.essence.com/wp-content/uploads/2017/02/1486507932/GettyImages-140390801.jpg" alt="Card image cap">
+          
         </div>
       </div>
 

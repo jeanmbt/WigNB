@@ -13,11 +13,11 @@ puts "Creating wigs"
 @images = Dir.glob("app/assets/images/wigs/*.jpg")
 counter = 0
 @images.each do |image|
-  file = URI.open()
+  file = URI.open(wig_urls[counter])
   counter = counter + 1
   puts "creating wig # #{counter}"
   new_wig = Wig.new(user_id: 1, name: "Wig Example ##{counter}", description: "This is where you tell more about the wig", color: "Existing color", material:"Natural/Plastic...", style: "Wavy/Straight...")
-  #new_wig.photo.attach(io: file, filename: image, content_type: "image/png")
+  new_wig.photo.attach(io: file, filename: image, content_type: "image/png")
   puts new_wig.name
   new_wig.save
   # Trying to assign uploaded picture to wig model. Need to find how to get the 'key' information to assign to wig.photo.key)
