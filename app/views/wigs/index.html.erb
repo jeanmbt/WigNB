@@ -1,9 +1,9 @@
 <div class="container cards-container">
-  <div class="cards-group row">
+  <div class="cards-group row" >
 
   <!-- ADD WIG CARD -->
 
-      <div class="card new-wig-card card-size">
+      <div class="card new-wig-card card-size <%= card_shadow %>">
 
         <div class="card-body">
           <div class="inside-card">
@@ -17,7 +17,7 @@
       </div>
 
     <% @wigs.each do |wig| %>
-      <div class="card card-size">
+      <div class="card card-size <%= card_shadow %>">
 
         <%# if wig.photo.attached? %>
           <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>

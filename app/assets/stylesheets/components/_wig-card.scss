@@ -1,19 +1,34 @@
+@keyframes example {
+  2%   {background-color: rgb(243, 208, 240);}
+  27%  {background-color: rgb(252, 252, 252);}
+  52%  {background-color: rgb(206, 206, 252);}
+  98% {background-color: rgb(255, 255, 255);}
+}
+
+.cards-group {
+  margin: 50px 0px;
+  margin-left: 90px;
+  width: auto;
+}
+
+// card configs
 .card-img-size {
   height: 218px;
   width: 218px;
 }
-
 .card-size {
   width: 220px;
   height: 450px;
   margin: 5px;
-
+  
 }
+
+// wigs cards
 .card {
-  background-color: #eecaf3;
+  background-color: #ffffff80;
+  margin: 20px 10px;
   &:hover {
-    -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
-    box-shadow: 5px 5px 15px 5px #0000004d;
+    
     background-color: #ffffff;
     transition: 0.75s;
   }
@@ -25,8 +40,11 @@
     position: absolute;
   }
 }
+
+
+// first cards (to create a wig)
 .new-wig-card {
-  background-color: #af97afdc ;
+  background-color: #d3c3d381 ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,16 +55,51 @@
   a {
     background-color: transparent;
     color: black;
+    right: 42px;
   }
   &:hover {
-    box-shadow: 5px 5px 15px 5px #8a3e869c;
+    
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
   }
 
 }
+// random box-shadow
 
-.cards-group {
-  margin: 50px 0px;
-  margin-left: 90px;
-  width: auto;
+.shadow-blue {
+  &:hover {
+    -webkit-box-shadow: 0px 2px 19px 12px #490df0de; 
+      box-shadow:  0px 2px 19px 12px #490df0e5;
+  }
 }
-
+.shadow-green {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 12px #0df046e1; 
+    box-shadow:  0px 2px 19px 12px #0df046da;
+  }
+}
+.shadow-pink {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 12px #f00db7d8; 
+    box-shadow:  0px 2px 19px 12px #f00db7e1;
+  }
+}
+.shadow-purple {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 12px #820df0ea; 
+    box-shadow:  0px 2px 19px 12px #820df0e1;
+  }
+}
+.shadow-yellow {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 12px #eede06e8; 
+    box-shadow:  0px 2px 19px 12px #eede06e1;
+  }
+}
+.shadow-orange {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 12px #f07b0de3; 
+    box-shadow:  0px 2px 19px 12px #f07b0dde;
+  }
+}
