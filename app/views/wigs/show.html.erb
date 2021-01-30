@@ -1,45 +1,27 @@
-<div class="map" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scontent-ber1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/133248991_112784727359879_1237372744980897601_n.jpg?_nc_ht=scontent-ber1-1.cdninstagram.com&_nc_cat=111&_nc_ohc=NuqDOV2axEEAX-qhZ7n&tp=1&oh=a854a19bc5842e0488b66917a00e736e&oe=603BC494)"></div>
-
 <div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-8">
-      <div class="wig-show-card">
-        <h1><%= @wig.name %></h1>
-        <p class="wig-show-color"><%= @wig.color %></p>
+  <div class="show-container">
+    <div class="row">
+      <div class="col-8">
+        <div class="wig-show-card">
+          <h1><%= @wig.name %></h1>
+          <p class="wig-show-color"><%= @wig.color %></p>
+        </div>
+        <div class="wig-show-card">
+          <h3>A bit more about this wig:</h3>
+          <p><%= @wig.description %></p>
+          <!-- MAP -->
+          <img class="card-img-top card-img-size" src="https://www.essence.com/wp-content/uploads/2017/02/1486507932/GettyImages-140390801.jpg" alt="Card image cap">
+        </div>
       </div>
-      <div class="wig-show-card">
-        <h3>A bit more about this wig...</h3>
-        <p><%= @wig.description %></p>
-        <!-- MAP -->
-      </div>
-    </div>
 
-    <div class="col-4">
-      <div class="wig-show-card">
-        <h5>Book this wig!</h5>
-
-        <form action="">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form>
-      </div>
-      <div class="flat-show-card">
-        <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
-
-          <div class="flex">
-            <i class="fa fa-facebook-square fa-2x mr-2"></i>
-            <i class="fa fa-twitter-square fa-2x mr-2"></i>
-            <i class="fa fa-pinterest-square fa-2x mr-2"></i>
-            <i class="fa fa-envelope-square fa-2x"></i>
-          </div>
+      <div class="col-4">
+        <div class="wig-show-card">
+          <h5>Book this wig!</h5>
+            <%= simple_form_for [@wig, @booking] do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.button :submit, class: "btn btn-primary" %>
+            <% end %>
         </div>
       </div>
     </div>

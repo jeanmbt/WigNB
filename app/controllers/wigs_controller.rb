@@ -14,9 +14,10 @@ class WigsController < ApplicationController
 
   def show
     @wig = Wig.find(params[:id])
+    @booking = Booking.new
     authorize @wig
   end
-  
+
   def new
     @wig = Wig.new
     authorize @wig
@@ -26,7 +27,7 @@ class WigsController < ApplicationController
     @wig = Wig.new(wig_params)
     @wig.save
   end
-  
+
   private
 
   def wig_params
@@ -36,5 +37,5 @@ class WigsController < ApplicationController
   def days_ago
     Time.now - @wig.created_at
   end
-  
+
 end
