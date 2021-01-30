@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to wigs_path
-      flash[:notice] = "Yaaaas Queen we have a new wig!"
+      flash[:notice] = "Yaaaas Queen, you just booked your wig!"
     else
       redirect_to wig_path(@wig)
     end
