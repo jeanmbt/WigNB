@@ -12,6 +12,11 @@ class WigsController < ApplicationController
 
   end
 
+  def show
+    @wig = Wig.find(params[:id])
+    authorize @wig
+  end
+  
   def new
     @wig = Wig.new
     authorize @wig
