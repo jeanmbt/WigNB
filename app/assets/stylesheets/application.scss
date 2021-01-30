@@ -15,4 +15,14 @@
 @import "components/navbar";
 @import "components/banner";
 @import "components/search_form";
-@import "components/wig-card"
+@import "components/wig-card";
+
+body {
+  background-image:  linear-gradient(rgba(146, 116, 158, 0.911),rgba(137, 98, 155, 0.747)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
+  background-color: #7D4187;
+  background-size: 100%;
+  background-repeat: round;
+}
+#text {
+  display: none;
+}
