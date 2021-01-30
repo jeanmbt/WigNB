@@ -37,10 +37,9 @@ body {
     width: 100px;
     right: 0;
     &:hover {
-      -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
+      -webkit-box-shadow: 5px 5px 15px 5px #00000041;
       box-shadow: 5px 5px 15px 5px #0000004d;
       background-color: #b347a4;
       transition: 0.75s;
     }
-  }
 }
