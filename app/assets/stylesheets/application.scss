@@ -21,7 +21,8 @@
 @import "new.scss";
 
 body {
-  
+
+ 
   background-image:  linear-gradient(rgba(190, 0, 238, 0.5),rgba(117, 73, 143, 0.582)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
   background-color: #7D4187;
   background-size: 100%;
@@ -29,4 +30,21 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
 }
+h1 {
+  font-family: 'Lobster', cursive;
+  letter-spacing: 2px;
+}
 
+p, h2, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif !important;  
+}
+h3 {
+  font-family: 'Lobster', cursive !important ;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.btn {
+  font-family: 'Lobster', cursive !important ;
+  letter-spacing: 2px;
+}
