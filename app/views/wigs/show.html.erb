@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-8">
         <div class="wig-show-card">
-          <%# if wig.photo.attached? %>
-          <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
-        <%# else %>
+          <% if @wig.photo.attached? %>
+          <%= cl_image_tag @wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+        <% else %>
           <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
-        <%# end %>
+        <% end %>
           
           <h1><%= @wig.name %></h1>
           <p class="wig-show-color"><%= @wig.color %></p>
@@ -15,6 +15,7 @@
         <div class="wig-show-card">
           <h3>A bit more about this wig:</h3>
           <p><%= @wig.description %></p>
+          <%= link_to  "Edit", edit_wig_path(@wig) %>
           <!-- MAP -->
           
         </div>
