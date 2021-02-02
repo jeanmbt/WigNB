@@ -13,15 +13,18 @@
   </head>
 
   <body>
-    <!-- p class="notice"><%= notice %></p-->
-    <!-- p class="alert"><%= alert %></p-->
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="body-container">
+      <!-- p class="notice"><%= notice %></p-->
+      <!-- p class="alert"><%= alert %></p-->
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      
+      <%= yield %>
+      <div class="blank-space mt-50">
+        <p> </p>
+      </div>
+      <%#= render 'shared/footer' %>
     
-    <%= yield %>
-    <div class="blank-space mt-50">
-      <p> </p>
     </div>
-    <%#= render 'shared/footer' %>
   </body>
 </html>

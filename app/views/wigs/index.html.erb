@@ -1,4 +1,19 @@
-<div class="container cards-container">
+<div class="container cards-container main-container">
+
+  <!-- FORM -->
+  <div class="form-container">
+    <div class="search-form">
+      <%= form_tag wigs_path, class: "search-input", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a wig"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary btn-search" %>
+      <% end %>
+    </div>  
+  </div>
+
   <div class="cards-group row" >
 
   <!-- ADD WIG CARD -->
@@ -28,7 +43,8 @@
 
         <div class="card-body">
           <h5 class="card-title"><%= wig.name %></h5>
-          <h6 class="card-text"> <%#= wig.color %><br> <%= wig.material %><br><br> <%= wig.style %></h6>
+          <h6 class="card-text"> <br> <%= wig.material %><br><br> <%= wig.style %></h6>
+          <p class="d-none card-text"> <%= wig.color %> </p>
           <p class="card-text days-ago"><small class="text-muted"><%= time_ago_in_words(wig.created_at) %> ago</small></p>
           <%= link_to  ">", wig_path(wig) %>
         </div>
