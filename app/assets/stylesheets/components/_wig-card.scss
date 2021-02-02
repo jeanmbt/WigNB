@@ -1,32 +1,79 @@
+// fx
+@keyframes change_bkg_pastel {
+  50% {background-color: rgba(183, 0, 255, 0.397);}
+}
+@keyframes really-colourful {
+  2%   {background-color: rgb(247, 93, 234);}
+  27%  {background-color: rgb(243, 166, 66);}
+  52%  {background-color: rgb(69, 216, 241);}
+  98% {background-color: rgb(107, 75, 224);}
+}
+@keyframes shadow-blink {
+  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(183, 0, 255, 0.74); 
+    box-shadow:  0px 2px 50px 20px rgba(183, 0, 255, 0.774);}
+}
+.cards-group {
+  margin: 50px 0px;
+  margin-left: 110px;
+  width: auto;
+}
+
+// card configs
 .card-img-size {
   height: 218px;
   width: 218px;
 }
-
 .card-size {
   width: 220px;
   height: 450px;
-  margin: 5px;
-
+  margin: 20px 40px !important;
+  
 }
+
+// wigs cards
 .card {
-  background-color: #eecaf3;
+  background-color: #ffffff80;
+  margin: 20px 10px;
   &:hover {
-    -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
-    box-shadow: 5px 5px 15px 5px #0000004d;
     background-color: #ffffff;
     transition: 0.75s;
   }
+  .card-title {
+    font-weight: bold;
+    font-size: 98%;
+  }
+  h6 {
+    position: absolute;
+    bottom: 100px;
+  }
+  .text-muted {
+    position: absolute;
+    bottom: 60px;
+  }
   a {
-    background-color: #7D4187;
+    background-color: #2b243f;
     padding: 10px;
     text-decoration: none;
     color: white;
     position: absolute;
+    width: 218px;
+    left: 0;
+    text-align: center;
+    bottom: 0;
+    &:hover {
+      transition: 1s;
+      animation-name: really-colourful;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      font-size: 1.2em;
+    }
   }
 }
+
+
+// first card (to create a wig)
 .new-wig-card {
-  background-color: #af97afdc ;
+  background-color: #d3c3d381 ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,18 +82,61 @@
     margin-top: 150px;
   }
   a {
-    background-color: transparent;
+    background-color: rgba(255, 192, 247, 0) !important;
     color: black;
+    right: 42px;
+    text-align: center;
+    padding: 212px 0;
   }
   &:hover {
-    box-shadow: 5px 5px 15px 5px #8a3e869c;
+    background-color: #ffffff00;
+    animation-name: change_bkg_pastel !important;
+    animation-duration: 4s !important;
+    animation-iteration-count: infinite;
   }
 
 }
+// random box-shadow
 
-.cards-group {
-  margin: 50px 0px;
-  margin-left: 90px;
-  width: auto;
+.shadow-blue {
+  &:hover {
+    -webkit-box-shadow: 0px 2px 19px 2px #490df0de; 
+      box-shadow:  0px 2px 19px 2px #490df0e5;
+      animation: shadow-blink 6s infinite;
+  }
 }
-
+.shadow-green {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 2px #0df046e1; 
+    box-shadow:  0px 2px 19px 2px #0df046da;
+    animation: shadow-blink 6s infinite;
+  }
+}
+.shadow-pink {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 2px #f00db7d8; 
+    box-shadow:  0px 2px 19px 2px #f00db7e1;
+    animation: shadow-blink 6s infinite;
+  }
+}
+.shadow-purple {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 2px #820df0ea; 
+    box-shadow:  0px 2px 19px 2px #820df0e1;
+    animation: shadow-blink 6s infinite;
+  }
+}
+.shadow-yellow {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 2px #eede06e8; 
+    box-shadow:  0px 2px 19px 2px #eede06e1;
+    animation: shadow-blink 6s infinite;
+  }
+}
+.shadow-orange {
+  &:hover {
+    -webkit-box-shadow:  0px 2px 19px 2px #f07b0de3; 
+    box-shadow:  0px 2px 19px 2px #f07b0dde;
+    animation: shadow-blink 6s infinite;
+  }
+}

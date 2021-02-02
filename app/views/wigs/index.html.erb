@@ -1,36 +1,36 @@
 <div class="container cards-container">
-  <div class="cards-group row">
+  <div class="cards-group row" >
 
   <!-- ADD WIG CARD -->
 
-      <div class="card new-wig-card card-size">
+      <div class="card new-wig-card card-size shadow-pink">
 
         <div class="card-body">
           <div class="inside-card">
             <!--h5 class="card-title">Add <h4>your</h4> wig</h5-->
             <br>
             <div class="mt-3">
-              <%= link_to  "Add your wig", new_wig_path %>
+              <h1><%= link_to  "Add wig", new_wig_path %></h1>
             </div>
           </div>
         </div>
       </div>
 
     <% @wigs.each do |wig| %>
-      <div class="card card-size">
+      <div class="card card-size <%= card_shadow %>">
 
-        <%# if wig.photo.attached? %>
-          <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
-        <%# else %>
-          <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
-        <%# end %>
+        <% if wig.photo.attached? %>
+          <%= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+        <% else %>
+          <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap" style="object-fit: cover">
+        <% end %>
         
 
         <div class="card-body">
           <h5 class="card-title"><%= wig.name %></h5>
-          <h6 class="card-text"> <%= wig.color %><br> <%= wig.material %><br> <%= wig.style %></h6>
-          <p class="card-text"><small class="text-muted"><%= time_ago_in_words(wig.created_at) %> ago</small></p>
-          <%= link_to  "More about this wig", wig_path(wig) %>
+          <h6 class="card-text"> <%#= wig.color %><br> <%= wig.material %><br><br> <%= wig.style %></h6>
+          <p class="card-text days-ago"><small class="text-muted"><%= time_ago_in_words(wig.created_at) %> ago</small></p>
+          <%= link_to  ">", wig_path(wig) %>
         </div>
       </div>
 

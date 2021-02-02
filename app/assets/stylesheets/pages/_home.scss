@@ -9,7 +9,7 @@
       justify-content: space-around;
       flex-direction: column;
       a {
-        background-color: #3e2b60;
+        background-color: #bd8cb6 !important;
         background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
         padding: 15px 20px;
         margin-top: 50px;
@@ -20,7 +20,8 @@
         &:hover {
           -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
           box-shadow: 5px 5px 15px 5px #0000004d;
-          background-color: #b347a4;
+          background-color: #3e2b60 !important;
+          
           transition: 0.75s;
         }
     }

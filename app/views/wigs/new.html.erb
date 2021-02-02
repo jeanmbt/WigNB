@@ -1,8 +1,8 @@
 <div class="container main-container">
 
   <div class="container mt-50 mb-50 form-container" style=""> 
-    <%= link_to  "<< go back", wigs_path %>
     <h1 class="text-center mt-5"> Add a new Wig </h1>  
+    <%= link_to  "<< go back", wigs_path, class: "btn text-right" %>
     <%= simple_form_for (@wig) do |f| %>
       <%= f.input :name %>
       <%= f.input :color %>
