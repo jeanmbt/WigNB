@@ -4,7 +4,13 @@ class WigsController < ApplicationController
 
   def index
     # @wigs = Wig.all
-    @wigs = policy_scope(Wig).order(created_at: :desc) 
+    @wigs = policy_scope(Wig).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR color ILIKE :query OR style ILIKE :query OR material ILIKE :query"
+      @wigs = Wig.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @wigs = policy_scope(Wig).order(created_at: :desc) 
+    end
   end
 
   def show

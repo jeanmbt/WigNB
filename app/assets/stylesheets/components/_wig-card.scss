@@ -70,7 +70,24 @@
   }
 }
 
+// cards-container 
 
+.cards-container {
+  .form-container {
+    background-color: #ffffff00;
+    margin: 0 50px;
+  }
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 50px;
+    .search-input {
+      width: 500px;
+    }
+    .btn-search {}
+  }
+}
 // first card (to create a wig)
 .new-wig-card {
   background-color: #d3c3d381 ;
@@ -140,3 +157,4 @@
     animation: shadow-blink 6s infinite;
   }
 }
+
