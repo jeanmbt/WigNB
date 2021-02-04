@@ -2,14 +2,14 @@
 
 
 .main-container {
-  height: 100vh;
     .content-container {
       margin-top: 50px;
       display: flex;
       justify-content: space-around;
       flex-direction: column;
+      height: 100%;
       a {
-        background-color: #bd8cb6 !important;
+        background-color: #793a6f !important;
         background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
         padding: 15px 20px;
         margin-top: 50px;
@@ -26,11 +26,7 @@
         }
     }
   }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+
 }
 .about-container {
   margin-top: 50px;

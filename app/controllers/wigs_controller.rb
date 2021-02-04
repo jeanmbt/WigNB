@@ -32,7 +32,31 @@ class WigsController < ApplicationController
     @wig.save
     redirect_to wigs_path
   end
+  
+  def edit
+    @wig = Wig.find(params[:id])
+    @wig.user = current_user
+    authorize @wig
+  end
+  
+  def update
+    @wig = Wig.find(params[:id])
+    @wig.user = current_user
+    authorize @wig
+    @wig.update(wig_params)
 
+    redirect_to wig_path(@wig)
+  end
+
+  def destroy
+    # Not working
+    @wig = Wig.find(params[:id])
+    @wig.user = current_user
+    authorize @wig
+    @wig.destroy
+    redirect_to wigs_path
+  end
+  
   private
 
   def wig_params
