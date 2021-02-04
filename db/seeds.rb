@@ -36,6 +36,10 @@ def material_generator
   material_generated.to_s
 end
 
+def color_generator
+  ["blue", "green", "yellow", "red", "blonde", "brown", "black", "deep brown", "neon yellow", "white", "ginger", "grey"].sample
+end
+
 puts "Creating wigs"
 
 # @images = Dir.glob("app/assets/images/wigs/*.jpg")
@@ -45,7 +49,7 @@ wig_urls.each do |wig_url|
   file = URI.open(wig_url)
   counter = counter + 1
   puts "creating wig # #{counter}\n\n"
-  new_wig = Wig.new(user_id: new_user.id, name: wig_name_generator, description: "This is where you tell more about the wig", color: "#{Faker::Color.color_name}", material: "#{material_generator}", style: "#{style_generator}")
+  new_wig = Wig.new(user_id: new_user.id, name: wig_name_generator, description: "This is where you tell more about the wig", color: color_generator, material: "#{material_generator}", style: "#{style_generator}")
   new_wig.photo.attach(io: file, filename: new_wig.name, content_type: "image/png")
   puts "💅 created #{new_wig.name} \n" 
   new_wig.save
