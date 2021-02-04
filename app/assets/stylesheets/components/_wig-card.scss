@@ -1,6 +1,6 @@
 // fx
 @keyframes change_bkg_pastel {
-  50% {background-color: rgba(183, 0, 255, 0.397);}
+  50% {background-color: rgba(255, 0, 149, 0.74);}
 }
 @keyframes really-colourful {
   2%   {background-color: rgb(247, 93, 234);}
@@ -9,8 +9,8 @@
   98% {background-color: rgb(107, 75, 224);}
 }
 @keyframes shadow-blink {
-  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(183, 0, 255, 0.74); 
-    box-shadow:  0px 2px 50px 20px rgba(183, 0, 255, 0.774);}
+  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(255, 0, 149, 0.74); 
+    box-shadow:  0px 2px 50px 20px rgba(255, 0, 149, 0.74);}
 }
 .cards-group {
   margin: 50px 0px;
@@ -22,6 +22,8 @@
 .card-img-size {
   height: 218px;
   width: 218px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .card-size {
   width: 220px;
@@ -32,6 +34,7 @@
 
 // wigs cards
 .card {
+  border-radius: 10px;
   background-color: #ffffff80;
   margin: 20px 10px;
   &:hover {
@@ -51,6 +54,8 @@
     bottom: 60px;
   }
   a {
+    border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
     background-color: #2b243f;
     padding: 10px;
     text-decoration: none;
@@ -70,7 +75,42 @@
   }
 }
 
+// cards-container 
+// FORM 
+.cards-container {
+  .form-container {
+    background-color: #ffffff00;
+    margin: 0 50px;
+  }
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 50px;
+    
+    .search-input {
+      width: 500px;
+    }
+    .btn-search {
+      border: 1px solid transparent;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      width: 500px;
+      background-color: #2b243f;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+    &:hover {
+      transition: 1s;
+      animation-name: really-colourful;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
 
+      
+    }
+  }
+}
 // first card (to create a wig)
 .new-wig-card {
   background-color: #d3c3d381 ;
@@ -140,3 +180,4 @@
     animation: shadow-blink 6s infinite;
   }
 }
+
