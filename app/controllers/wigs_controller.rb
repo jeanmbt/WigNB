@@ -4,7 +4,7 @@ class WigsController < ApplicationController
 
   def index
     # @wigs = Wig.all
-    @wigs = policy_scope(Wig).order(created_at: :desc) 
+    @wigs = policy_scope(Wig).order(created_at: :desc)
   end
 
   def show
@@ -17,7 +17,7 @@ class WigsController < ApplicationController
     @wig = Wig.new
     @wig.user = current_user
     authorize @wig
-      end
+  end
 
   def create
     @wig = Wig.new(wig_params)
