@@ -1,0 +1,47 @@
+<div class="main-container full-height-container">
+  <div class="headers-flex d-flex" style="width:100%">
+    <h3 style="margin-left:20px; margin-top: 30px;">My Wigs</h3>
+  </div>
+  <div class="underline-dashboard"></div>
+
+  <div class="cards-group row" >
+
+    <!-- ADD WIG CARD -->
+
+        <div class="card new-wig-card card-size shadow-pink">
+
+          <div class="card-body">
+            <div class="inside-card">
+              <!--h5 class="card-title">Add <h4>your</h4> wig</h5-->
+              <br>
+              <div class="mt-3">
+                <h1><%= link_to  "Add wig", new_wig_path %></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <% @wigs.each do |wig| %>
+        <div class="card card-size <%= card_shadow %>">
+
+          <% if wig.photo.attached? %>
+            <%= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+          <% else %>
+            <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap" style="object-fit: cover">
+          <% end %>
+
+
+          <div class="card-body">
+            <h5 class="card-title"><%= wig.name %></h5>
+            <h6 class="card-text"> <br> <%= wig.material %><br><br> <%= wig.style %></h6>
+            <p class="d-none card-text"> <%= wig.color %> </p>
+            <p class="card-text days-ago"><small class="text-muted"><%= time_ago_in_words(wig.created_at) %> ago</small></p>
+            <%= link_to  ">", wig_path(wig) %>
+          </div>
+        </div>
+
+
+      <% end %>
+    </div>
+    <div class="underline-dashboard"></div>
+</div>

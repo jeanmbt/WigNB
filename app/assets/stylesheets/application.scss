@@ -16,6 +16,7 @@
 @import "components/banner";
 @import "components/search_form";
 @import "components/wig-card";
+@import "components/wigs-dashboard";
 
 // pages
 @import "new.scss";
@@ -31,16 +32,43 @@ body {
   background-position: 50% 50%;
   height: 100vh;
   padding-bottom: 50px;
-  
+
   .body-container {
     //z-index: 0;
-    
+
   }
   .main-container {
-    height: 100%;
+    .content-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100%;
+      a {
+        background-color: #793a6f !important;
+        background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
+        padding: 15px 20px;
+        margin-top: 50px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        width: 250px;
+        &:hover {
+          -webkit-box-shadow: 5px 5px 15px 5px #00000041;
+          box-shadow: 5px 5px 15px 5px #0000004d;
+          background-color: #3e2b60 !important;
 
-
+          transition: 0.75s;
+        }
+    }
   }
+
+}
+.about-container {
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.301);
+  border-radius: 1px;
+}
 }
 .full-height-container {
   height: 100%;
@@ -52,7 +80,7 @@ h1 {
 }
 
 p, h2, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif !important;  
+  font-family: 'Montserrat', sans-serif !important;
 }
 h3 {
   font-family: 'Lobster', cursive !important ;
@@ -64,3 +92,5 @@ h3 {
   font-family: 'Lobster', cursive !important ;
   letter-spacing: 2px;
 }
+
+
