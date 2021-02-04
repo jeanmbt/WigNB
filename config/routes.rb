@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :wigs, only: [:index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [:new, :create]
   end
+
+  resource :dashboard, only: [ :show ]
+  resources :bookings, only: [ :destroy, :show, :index ]
+
   delete "wigs/:id", to: "wigs#destroy", as: "delete_wig"
+
 end

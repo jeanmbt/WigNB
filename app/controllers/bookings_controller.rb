@@ -13,6 +13,23 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @user = current_user
+    # @bookings = @user.bookings
+    # get all the bookings that belong to that user
+    @bookings = @user.bookings
+    @past_bookings = []
+    @future_bookings = []
+    @bookings.each do |booking|
+      if booking.end_date < Date.today
+        @past_bookings << booking
+      else
+        @future_bookings << booking
+      end
+    end
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+  end
+
   private
 
   def booking_params
