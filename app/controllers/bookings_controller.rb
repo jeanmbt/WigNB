@@ -30,6 +30,19 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
+  def confirm
+    @booking = Booking.find(params[:id])
+    if @booking.confirmed == true
+      @booking.confirmed = false
+    else
+      @booking.confirmed = true
+    end
+    
+    authorize @booking
+    @booking.save
+    redirect_to bookings_path
+  end
+
   private
 
   def booking_params

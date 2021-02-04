@@ -16,4 +16,8 @@ class BookingPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def confirm?
+    true
+  end
 end

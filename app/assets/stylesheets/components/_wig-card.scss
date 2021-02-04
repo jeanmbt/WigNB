@@ -33,7 +33,7 @@
 }
 
 // wigs cards
-.card {
+.card-wig {
   border-radius: 10px;
   background-color: #ffffff80;
   margin: 20px 10px;
@@ -74,7 +74,44 @@
     }
   }
 }
+// CARD FOR BOOKINGS
 
+.card {
+  border-radius: 10px;
+  background-color: #ffffff80;
+  margin: 20px 10px;
+  &:hover {
+    background-color: #ffffff;
+    transition: 0.75s;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size: 98%;
+  }
+  h6 {
+    position: absolute;
+    bottom: 100px;
+  }
+  .text-muted {
+
+  }
+  a {
+    //background-color: #2b243f;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+
+
+    text-align: center;
+
+    &:hover {
+      
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+    }
+  }
+}
 // cards-container 
 // FORM 
 .cards-container {

@@ -2,12 +2,10 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -16,51 +14,80 @@
 @import "components/banner";
 @import "components/search_form";
 @import "components/wig-card";
-
 // pages
 @import "new.scss";
-
 body {
-
   background-color: #7D4187;
-  background-image:  linear-gradient(rgba(231, 109, 185, 0.788),rgba(117, 73, 143, 0.781)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
+  background-image: linear-gradient(rgba(231, 109, 185, 0.788), rgba(117, 73, 143, 0.781)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
   backdrop-filter: blur(5px);
   background-size: 100%;
-  background-blend-mode: luminosity  ;
+  background-blend-mode: luminosity;
   background-attachment: fixed;
   background-position: 50% 50%;
   height: 100vh;
   padding-bottom: 50px;
-  
   .body-container {
     //z-index: 0;
-    
   }
   .main-container {
-    height: 100%;
-
-
+    .content-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100%;
+      a {
+        background-color: #793a6f !important;
+        background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
+        padding: 15px 20px;
+        margin-top: 50px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        width: 250px;
+        &:hover {
+          -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
+          box-shadow: 5px 5px 15px 5px #0000004d;
+          background-color: #3e2b60 !important;
+          
+          transition: 0.75s;
+        }
+    }
   }
+
 }
+.about-container {
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.301);
+  border-radius: 1px;
+}
+}
+
 .full-height-container {
   height: 100%;
   background-size: cover;
 }
+
 h1 {
   font-family: 'Lobster', cursive;
   letter-spacing: 2px;
 }
 
-p, h2, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif !important;  
+p,
+h2,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif !important;
 }
+
 h3 {
-  font-family: 'Lobster', cursive !important ;
+  font-family: 'Lobster', cursive !important;
   letter-spacing: 2px;
   font-weight: bolder;
 }
 
 .btn {
-  font-family: 'Lobster', cursive !important ;
+  font-family: 'Lobster', cursive !important;
   letter-spacing: 2px;
 }
