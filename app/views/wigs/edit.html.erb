@@ -1,0 +1,31 @@
+<div class="body-container">
+  <div class="container">
+    <div class="d-flex justify-content-center align-itens-center flex-column">
+      <h1 class="">Edit your wig</h1>
+      <%= link_to  "<< go back", wig_path(@wig), class: "btn text-right" %>
+      <% if @wig.photo.attached? %>
+          <%= cl_image_tag @wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+        <% else %>
+          <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
+        <% end %>
+
+      <div class="form-container">
+        <%= simple_form_for [@wig] do |f| %>
+          <%= f.input :name, label: "name" %>
+          <%= f.input :description, label: "text" %>
+          <%= f.input :color, label: "color" %>
+          <%= f.input :style, label: "style" %>
+          <%= f.input :material, label: "material" %>
+          <%= f.input :photo, as: :file, class: "btn-form" %>
+          <%= f.submit %>
+
+        <% end %>
+        
+        <%= link_to  "Delete", delete_wig_path(@wig), method: :delete, data: { confirm: "Are you sure?" }, class: "btn text-right" %>
+
+      </div>
+    </div>
+    
+  </div>
+
+</div>
