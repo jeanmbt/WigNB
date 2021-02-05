@@ -49,17 +49,19 @@ puts "Creating wigs"
 
 # @images = Dir.glob("app/assets/images/wigs/*.jpg")
 counter = 0
-wig_urls.each do |wig_url|
-  
-  file = URI.open(wig_url)
-  counter = counter + 1
-  puts "creating wig # #{counter}\n\n"
-  new_wig = Wig.new(user_id: new_user.id, name: wig_name_generator, description: "This is where you tell more about the wig", color: color_generator, material: "#{material_generator}", style: "#{style_generator}")
-  new_wig.photo.attach(io: file, filename: new_wig.name, content_type: "image/png")
-  puts "💅 created #{new_wig.name} \n" 
-  new_wig.save
-  # Trying to assign uploaded picture to wig model. Need to find how to get the 'key' information to assign to wig.photo.key)
-  #wig_counter = wig_counter - 1
-  # new_wig.photo.key = wig_cl_img[wig_counter]
-  # puts new_wig.photo.key
+3.times do 
+    wig_urls.each do |wig_url|
+    
+    file = URI.open(wig_url)
+    counter = counter + 1
+    puts "creating wig # #{counter}\n\n"
+    new_wig = Wig.new(user_id: new_user.id, name: wig_name_generator, description: "This is where you tell more about the wig", color: color_generator, material: "#{material_generator}", style: "#{style_generator}")
+    new_wig.photo.attach(io: file, filename: new_wig.name, content_type: "image/png")
+    puts "💅 created #{new_wig.name} \n" 
+    new_wig.save
+    # Trying to assign uploaded picture to wig model. Need to find how to get the 'key' information to assign to wig.photo.key)
+    #wig_counter = wig_counter - 1
+    # new_wig.photo.key = wig_cl_img[wig_counter]
+    # puts new_wig.photo.key
+    end
 end
