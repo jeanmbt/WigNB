@@ -6,18 +6,19 @@
 
     <div class="bookings-container cards-container">
     
-      <div class="actual-bookings">
+    <!--TO CONFIRM-->
+      <div class="to-confirm">
         <h2>To confirm:</h2>
         <div class="card-group">
           <div class="card">
             
             <% @future_bookings.each do |booking| %>
               <div class="card-body">
-                <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
                 <h5 class="card-title"><%= booking.wig.name %></h5>
                 <p class="card-text"> Get it on: <%= booking.start_date %></p>
                 <p class="card-text">Return it on: <%= booking.end_date %></p>
-                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+
                 <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
 
                 <div class="form-container">
@@ -37,6 +38,34 @@
         </div>
 
       </div>
+<!--WIGS YOU BOOKED -->
+
+
+ <div class="your-bookings">
+
+
+            <h2>Wigs you booked</h2>
+        <div class="card-group">
+          <div class="card bg-secondary">
+            
+            <% @future_bookings.each do |booking| %>
+              <div class="card-body">
+                <%#= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                <h5 class="card-title"><%= booking.wig.name %></h5>
+                <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                <p class="card-text">Return it on: <%= booking.end_date %></p>
+                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+
+                <div class="form-container">
+                </div>
+              </div>
+            <% end %>
+              
+          </div>
+        </div>
+
+
 
 <!--PAST BOOKINGS-->
       <div class="past-bookings">
