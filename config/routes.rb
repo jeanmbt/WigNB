@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :destroy, :show, :index ]
 
   delete "wigs/:id", to: "wigs#destroy", as: "delete_wig"
+  patch '/confirm/:id', to: 'bookings#confirm', as: "confirm"
 
 end
