@@ -13,7 +13,7 @@
     box-shadow:  0px 2px 50px 20px rgba(255, 0, 149, 0.74);}
 }
 .color-button {
-  background-color: #793a6f !important;
+  background-color: #793a6f;
   background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
   padding: 15px 20px;
   margin-top: 50px;
@@ -23,6 +23,7 @@
   width: 250px;
   border-radius: 50px;
   &:hover {
+    text: yellow !important;
     transition: 1s;
     animation-name: really-colourful;
     animation-duration: 4s;
