@@ -1,30 +1,58 @@
-<h1> Your bookings </h1>
-<div class="content-container">
+<h1 id="bookings-title"> Your bookings </h1>
+<div class="content-container bookings-container">
   <div class="container">
     <div class="row">
     <div class="container">
 <!--BOOKINGS PENDING-->
-      <div class="bookings bookings-pending">
+      <div class="bookings bookings-pending d-flex justify-content-center align-itens-center flex-column">
         <h3>pending bookings for your wigs</h3>
-        <div class="booking-tab pending-items">
-        <% if @bookings_from_other_users_to_my_wigs %> 
-          <% @bookings_from_other_users_to_my_wigs.each do |booking| %>
-            <% if booking.confirmed == nil %>
-              <div class="item">
-                <div class="item-body">
-                  <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
-                  <h5 class="card-title"><%= booking.wig.name %></h5>
-                  <p class="card-text"> Get it on: <%= booking.start_date %></p>
-                  <p class="card-text">Return it on: <%= booking.end_date %></p>
-                  <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
-                  <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
-                  <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+        <div class="booking-tab pending-items d-flex ">
+          <% if @bookings_from_other_users_to_my_wigs %> 
+            <% @bookings_from_other_users_to_my_wigs.each do |booking| %>
+              <% if booking.confirmed == nil %>
+              <!--start card-->
+                <div class="item bg-light">
+                  <div class="item-body">
+                    <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                    <h5 class="card-title"><%= booking.wig.name %></h5>
+                    <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                    <p class="card-text">Return it on: <%= booking.end_date %></p>
+                    <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+                    <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
+                    <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+                  </div>
                 </div>
-              </div>
+                <!--end card -->
+                <!--start card-->
+                <div class="item bg-light">
+                  <div class="item-body">
+                    <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                    <h5 class="card-title"><%= booking.wig.name %></h5>
+                    <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                    <p class="card-text">Return it on: <%= booking.end_date %></p>
+                    <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+                    <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
+                    <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+                  </div>
+                </div>
+                <!--end card -->
+                <!--start card-->
+                <div class="item bg-light">
+                  <div class="item-body">
+                    <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                    <h5 class="card-title"><%= booking.wig.name %></h5>
+                    <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                    <p class="card-text">Return it on: <%= booking.end_date %></p>
+                    <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+                    <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
+                    <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+                  </div>
+                </div>
+                <!--end card -->
+              <% end %>
             <% end %>
-          <% end %>
 
-        <% else %>
+          <% else %>
           <div class="nothing-here">
             <p>You're up to date</p>
           </div>
@@ -33,19 +61,19 @@
       </div>
 
 <!--WIGS YOU BOOKED-->
-      <div class="bookings wigs-you-booked">
+      <div class="bookings wigs-you-booked d-flex justify-content-center align-itens-center flex-column">
         <h3>Wigs you booked</h3>
-        <div class="booking-tab your-bookings">
+        <div class="booking-tab your-bookings d-flex">
           <% if @wigs_you_booked %>
             <% @wigs_you_booked.each do |booking| %>
-              <div class="item">
-              <div class="item-body">
-                <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
-                <h5 class="card-title"><%= booking.wig.name %></h5>
-                <p class="card-text"> Get it on: <%= booking.start_date %></p>
-                <p class="card-text">Return it on: <%= booking.end_date %></p>
-                <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
-              </div>
+              <div class="item bg-light">
+                <div class="item-body">
+                  <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                  <h5 class="card-title"><%= booking.wig.name %></h5>
+                  <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                  <p class="card-text">Return it on: <%= booking.end_date %></p>
+                  <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+                </div>
             </div>
               <!--returned already?-->
             <% end %>
