@@ -1,29 +1,32 @@
 <div class="container main-container mt-5">
   <div class="show-container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-1">
+      </div>
+      <div class="col-5">
         <div class="wig-show-card">
-          <% if @wig.photo.attached? %>
-          <%= cl_image_tag @wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
-        <% else %>
-          <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
-        <% end %>
+          <div class="wig-content">
+            <% if @wig.photo.attached? %>
+              <%= cl_image_tag @wig.photo.key, height: 300, width: 300, crop: :fill, cloud_name: "det3cfeuo" %>
+            <% else %>
+              <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
+            <% end %>
+            <br>
+            <h1><%= @wig.name %></h1>
+            <p class="wig-show-color"><%= @wig.color %></p>
 
-          <h1><%= @wig.name %></h1>
-          <p class="wig-show-color"><%= @wig.color %></p>
+            <h3>A bit more about this wig:</h3>
+            <p><%= @wig.description %></p>
+            <br>
+            <%= link_to  "Edit", edit_wig_path(@wig), class: "color-button" %>
+            <br><br>
         </div>
-        <div class="wig-show-card">
-          <h3>A bit more about this wig:</h3>
-          <p><%= @wig.description %></p>
-          <%= link_to  "Edit", edit_wig_path(@wig), class: "color-button" %>
-          <!-- MAP -->
-
         </div>
       </div>
 
       <div class="col-4">
         <div class="wig-show-card">
-          <h5>Book this wig!</h5>
+          <h3><br>Book this wig!</h3>
             <%= simple_form_for [@wig, @booking] do |f| %>
               <%= f.input :start_date %>
               <%= f.input :end_date %>
@@ -31,6 +34,9 @@
             <% end %>
         </div>
       </div>
+      <div class="col-2">
+      </div>
     </div>
   </div>
 </div>
+<div style="height: 50px"></div>
