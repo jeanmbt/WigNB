@@ -114,4 +114,47 @@ h3 {
 
 
 
+///////////// TEMPORARY HERE SO WE CAN DELIVER ON TIME 
+//////////// STYLE FOR Bookings
 
+.body-container {
+  #bookings-title {
+    color:white;
+    text-align:center;
+    margin-top: 50px;
+  }
+}
+.bookings {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color:white;
+  }
+  h5 {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 88%;
+  }
+  
+  .item {
+    width: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0 10px 0 10px;
+  
+    .card-img-size {
+      width: 100%;
+      height: auto;
+  
+    }
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+}
