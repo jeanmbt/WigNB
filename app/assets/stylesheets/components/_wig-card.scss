@@ -103,7 +103,8 @@
 
     text-align: center;
 
-
+  }
+}
 // cards-container 
 // FORM 
 
@@ -142,14 +143,12 @@
       text-decoration: none;
       color: white;
       text-align: center;
-    &:hover {
-      transition: 1s;
-      animation-name: really-colourful;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-    }
-
-
+        &:hover {
+        transition: 1s;
+        animation-name: really-colourful;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        }
     }
   }
 }
