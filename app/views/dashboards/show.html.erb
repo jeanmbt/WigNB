@@ -4,23 +4,7 @@
   </div>
   <div class="underline-dashboard"></div>
 
-  <div class="cards-group row" >
-
-    <!-- ADD WIG CARD -->
-
-        <div class="card new-wig-card card-size shadow-pink">
-
-          <div class="card-body">
-            <div class="inside-card">
-              <!--h5 class="card-title">Add <h4>your</h4> wig</h5-->
-              <br>
-              <div class="mt-3">
-                <h1><%= link_to  "Add wig", new_wig_path %></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <div class="cards-group row">
       <% @wigs.each do |wig| %>
         <div class="card card-size <%= card_shadow %>">
 

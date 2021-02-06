@@ -17,6 +17,7 @@
 @import "components/search_form";
 @import "components/wig-card";
 @import "components/wigs-dashboard";
+@import "components/button";
 
 // pages
 @import "new.scss";
@@ -53,13 +54,13 @@ body {
         text-align: center;
         color: white;
         width: 250px;
+        border-radius: 50px;
         &:hover {
-          -webkit-box-shadow: 5px 5px 15px 5px #00000041;
-          box-shadow: 5px 5px 15px 5px #0000004d;
-          background-color: #3e2b60 !important;
-
-          transition: 0.75s;
-        }
+          transition: 1s;
+          animation-name: really-colourful;
+          animation-duration: 4s;
+          animation-iteration-count: infinite;
+          }
     }
   }
 
