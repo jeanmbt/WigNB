@@ -14,19 +14,26 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @user = current_user
+    # all my wig's bookings where confirmed = nil
+    # @pending_bookings = boo
+    @booking =  Booking.wig.user
+    raise
+    # @wigs = Wig.all
+    # @user = current_user
+    # # @bookings = @user.bookings
     # @bookings = @user.bookings
-    # get all the bookings that belong to that user
-    @bookings = @user.bookings
-    @past_bookings = []
-    @future_bookings = []
-    @bookings.each do |booking|
-      if booking.end_date < Date.today
-        @past_bookings << booking
-      else
-        @future_bookings << booking
-      end
-    end
+    # # get all the bookings that belong to that user
+    # # raise
+    # @renter = @bookings.wig_id.user_id
+    # @past_bookings = []
+    # @future_bookings = []
+    # @bookings.each do |booking|
+    #   if booking.end_date < Date.today
+    #     @past_bookings << booking
+    #   else
+    #     @future_bookings << booking
+    #   end
+    # end
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
