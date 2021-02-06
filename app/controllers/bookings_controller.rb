@@ -14,13 +14,34 @@ class BookingsController < ApplicationController
   end
 
   def index
-    # all my wig's bookings where confirmed = nil
-    # @pending_bookings = boo
-    @booking =  Booking.wig.user
-    raise
+
+    @user = current_user
+    # BOOKINGS 
+    @wigs_you_booked = @user.bookings
+    @bookings_from_other_users_to_my_wigs = Booking.joins(:wig).where(wigs: {user: current_user}).where(confirmed: nil)
+    @confirmed_bookings_from_other_users_to_my_wigs = []
+    @denied_bookings_from_other_users_to_my_wigs = []
+    @past_bookings_from_other_users_to_my_wigs = []
+
+    @bookings_from_other_users_to_my_wigs.each do |booking|
+      # MANAGING BOOKINGS FOR YOUR WIGS
+      if booking.confirmed == true
+        @confirmed_bookings_from_other_users_to_my_wigs << booking
+      elsif booking.confirmed == false
+        @denied_bookings_from_other_users_to_my_wigs << booking
+      end
+
+      #DISPLAY PAST WIGS YOU BOOKED
+      if booking.end_date < Date.today
+        @past_bookings_from_other_users_to_my_wigs << booking
+      end
+        
+    end
+
+    @wigs_you_booked = @user.bookings
+    
+
     # @wigs = Wig.all
-    # @user = current_user
-    # # @bookings = @user.bookings
     # @bookings = @user.bookings
     # # get all the bookings that belong to that user
     # # raise
