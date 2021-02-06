@@ -1,7 +1,7 @@
 <div class="container main-container">
 
-  <div class="container mt-50 mb-50 form-container" style=""> 
-    <h1 class="text-center mt-5"> Add a new Wig </h1>  
+  <div class="container mt-50 mb-50 form-container" style="">
+    <h1 class="text-center mt-5"> Add a new Wig </h1>
     <%= link_to  "<< go back", wigs_path, class: "btn text-right" %>
     <%= simple_form_for (@wig) do |f| %>
       <%= f.input :name %>
@@ -10,8 +10,7 @@
       <%= f.input :material %>
       <%= f.input :style %>
       <%= f.input :photo, as: :file, class: "btn-form" %>
-      <br>
-      <%= f.submit %>
+      <%= f.button :submit, class: "color-button", data: { confirm: "Confirm Wig?" } %>
     <% end %>
   </div>
 </div>

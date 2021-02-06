@@ -8,16 +8,16 @@
         <% else %>
           <img class="card-img-top card-img-size" src="<%= image_url %>" alt="Card image cap">
         <% end %>
-          
+
           <h1><%= @wig.name %></h1>
           <p class="wig-show-color"><%= @wig.color %></p>
         </div>
         <div class="wig-show-card">
           <h3>A bit more about this wig:</h3>
           <p><%= @wig.description %></p>
-          <%= link_to  "Edit", edit_wig_path(@wig) %>
+          <%= link_to  "Edit", edit_wig_path(@wig), class: "color-button" %>
           <!-- MAP -->
-          
+
         </div>
       </div>
 
@@ -27,7 +27,7 @@
             <%= simple_form_for [@wig, @booking] do |f| %>
               <%= f.input :start_date %>
               <%= f.input :end_date %>
-              <%= f.button :submit, class: "btn btn-primary", data: { confirm: "Confirm booking?" } %>
+              <%= f.button :submit, class: "color-button", data: { confirm: "Confirm booking?" } %>
             <% end %>
         </div>
       </div>
