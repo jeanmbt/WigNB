@@ -1,1 +1,124 @@
-index.html.erb
+<h1> Your bookings </h1>
+<div class="content-container">
+  <div class="container">
+    <div class="row">
+    <div class="container">
+<!--BOOKINGS PENDING-->
+      <div class="bookings bookings-pending">
+        <h3>pending bookings for your wigs</h3>
+        <div class="booking-tab pending-items">
+        <% if @bookings_from_other_users_to_my_wigs %> 
+          <% @bookings_from_other_users_to_my_wigs.each do |booking| %>
+            <% if booking.confirmed == nil %>
+              <div class="item">
+                <div class="item-body">
+                  <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                  <h5 class="card-title"><%= booking.wig.name %></h5>
+                  <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                  <p class="card-text">Return it on: <%= booking.end_date %></p>
+                  <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+                  <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
+                  <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+        <% else %>
+          <div class="nothing-here">
+            <p>You're up to date</p>
+          </div>
+        <% end %>
+        </div>
+      </div>
+
+<!--WIGS YOU BOOKED-->
+      <div class="bookings wigs-you-booked">
+        <h3>Wigs you booked</h3>
+        <div class="booking-tab your-bookings">
+          <% if @wigs_you_booked %>
+            <% @wigs_you_booked.each do |booking| %>
+              <div class="item">
+              <div class="item-body">
+                <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                <h5 class="card-title"><%= booking.wig.name %></h5>
+                <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                <p class="card-text">Return it on: <%= booking.end_date %></p>
+                <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+              </div>
+            </div>
+              <!--returned already?-->
+            <% end %>
+          <% else %>
+            <div class="nothing-here">
+              <p>You're up to date</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+<!--CONFIRMED AND RETURNED WIGS-->
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- div class="">
+  <div class="full-height-container">
+<%= @renter %>
+    <h1> Your Bookings</h1>
+
+    <div class="bookings-container cards-container">
+    
+    TO CONFIRM
+      <div class="to-confirm">
+        <h2>To confirm:</h2>
+        <div class="card-group">
+          <div class="card">
+            <% if @bookings_from_other_users_to_my_wigs %>
+            <% @bookings_from_other_users_to_my_wigs.each do |booking| %>
+              <div class="card-body">
+                <%= cl_image_tag booking.wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
+                <h5 class="card-title"><%= booking.wig.name %></h5>
+                <p class="card-text"> Get it on: <%= booking.start_date %></p>
+                <p class="card-text">Return it on: <%= booking.end_date %></p>
+
+                <p class="text-muted">created <%= time_ago_in_words(booking.created_at) %> ago</p>
+
+                <div class="form-container">
+                  <% if booking.confirmed == false %>
+                    <p>✔<p>
+                    <%= link_to  "Confirm", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-success text-right" %>
+                  <% else %>
+                    <p>to confirm<p>
+                    <%= link_to  "  Deny  ", confirm_path(booking), method: :patch, data: { confirm: "Are you sure?" }, class: "btn btn-danger text-right" %>
+                  <% end %>
+                    
+                </div>
+              </div>
+            <% end %>
+            <% else %>
+            <p>You don't have any wigs to confirm</p>
+              <% end %>
+              
+          </div>
+        </div>
+
+      </div>
+WIGS YOU BOOKED
+
+
+        
+        
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+</div> -->

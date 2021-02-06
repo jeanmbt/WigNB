@@ -20,7 +20,7 @@
 
 
       <% @wigs.each do |wig| %>
-        <div class="card card-size <%= card_shadow %>">
+        <div class="card card-wig card-size <%= card_shadow %>">
 
           <% if wig.photo.attached? %>
             <%= cl_image_tag wig.photo.key, height: 300, width: 300, crop: :fill, class: "card-img-top card-img-size", cloud_name: "det3cfeuo" %>
