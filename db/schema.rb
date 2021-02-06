@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_124424) do
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["wig_id"], name: "index_bookings_on_wig_id"
   end
