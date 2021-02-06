@@ -14,11 +14,18 @@
 @import "components/banner";
 @import "components/search_form";
 @import "components/wig-card";
+
+@import "components/wigs-dashboard";
+@import "components/button";
+
+
 // pages
 @import "new.scss";
 body {
   background-color: #7D4187;
   background-image: linear-gradient(rgba(231, 109, 185, 0.788), rgba(117, 73, 143, 0.781)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif");
+
+
   backdrop-filter: blur(5px);
   background-size: 100%;
   background-blend-mode: luminosity;
@@ -26,8 +33,15 @@ body {
   background-position: 50% 50%;
   height: 100vh;
   padding-bottom: 50px;
+
   .body-container {
     //z-index: 0;
+
+
+  .body-container {
+    //z-index: 0;
+
+
   }
   .main-container {
     .content-container {
@@ -38,6 +52,9 @@ body {
       height: 100%;
       a {
         background-color: #793a6f !important;
+
+        /*background-image:  linear-gradient(rgba(231, 109, 185, 0.788),rgba(117, 73, 143, 0.781)), url("https://media0.giphy.com/media/3o7aCRZYNerX4ovPwI/giphy.gif?cid=ecf05e47ayppf2i6ekp7qortxw9yglz3sgex9xzfl0hurtz4&rid=giphy.gif"); */
+
         background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
         padding: 15px 20px;
         margin-top: 50px;
@@ -45,6 +62,7 @@ body {
         text-align: center;
         color: white;
         width: 250px;
+
         &:hover {
           -webkit-box-shadow: 5px 5px 15px 5px #00000041; 
           box-shadow: 5px 5px 15px 5px #0000004d;
@@ -52,6 +70,7 @@ body {
           
           transition: 0.75s;
         }
+
     }
   }
 
@@ -60,6 +79,9 @@ body {
   margin-top: 50px;
   background-color: rgba(255, 255, 255, 0.301);
   border-radius: 1px;
+
+}
+
 }
 }
 
@@ -73,11 +95,8 @@ h1 {
   letter-spacing: 2px;
 }
 
-p,
-h2,
-h4,
-h5,
-h6 {
+
+p, h2, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -90,4 +109,10 @@ h3 {
 .btn {
   font-family: 'Lobster', cursive !important;
   letter-spacing: 2px;
+
 }
+
+}
+
+
+

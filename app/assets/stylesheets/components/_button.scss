@@ -1,0 +1,53 @@
+// fx
+@keyframes change_bkg_pastel {
+  50% {background-color: rgba(255, 0, 149, 0.74);}
+}
+@keyframes really-colourful {
+  2%   {background-color: rgb(247, 93, 234);}
+  27%  {background-color: rgb(243, 166, 66);}
+  52%  {background-color: rgb(69, 216, 241);}
+  98% {background-color: rgb(107, 75, 224);}
+}
+@keyframes shadow-blink {
+  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(255, 0, 149, 0.74);
+    box-shadow:  0px 2px 50px 20px rgba(255, 0, 149, 0.74);}
+}
+.color-button {
+  background-color: #793a6f;
+  background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
+  padding: 15px 20px;
+  margin-top: 50px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  width: 250px;
+  border-radius: 50px;
+  &:hover {
+    text: yellow !important;
+    transition: 1s;
+    animation-name: really-colourful;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-decoration: none;
+    }
+}
+
+.dashboard-button {
+  background-color: #793a6f !important;
+  background: linear-gradient(292deg, rgba(62, 43, 96, 0.521) 5%, rgba(93, 52, 112, 0.568) 100%);
+  padding: 15px 20px;
+  margin-top: 50px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  width: 250px;
+  border-radius: 50px;
+  justify-content: flex-end;
+  &:hover {
+    transition: 1s;
+    animation-name: really-colourful;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-decoration: none;
+    }
+}

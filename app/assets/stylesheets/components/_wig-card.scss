@@ -9,34 +9,33 @@
   98% {background-color: rgb(107, 75, 224);}
 }
 @keyframes shadow-blink {
-  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(255, 0, 149, 0.74); 
+  50% {-webkit-box-shadow: 0px 2px 50px 20px rgba(255, 0, 149, 0.74);
     box-shadow:  0px 2px 50px 20px rgba(255, 0, 149, 0.74);}
 }
 .cards-group {
-  margin: 50px 0px;
-  margin-left: 110px;
-  width: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 // card configs
 .card-img-size {
-  height: 218px;
-  width: 218px;
+  height: 298px;
+  width: 298px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 .card-size {
-  width: 220px;
-  height: 450px;
-  margin: 20px 40px !important;
-  
+  width: 300px;
+  height: 400px;
+  margin: 40px 40px !important;
 }
 
 // wigs cards
 .card-wig {
   border-radius: 10px;
   background-color: #ffffff80;
-  margin: 20px 10px;
+  margin: 0px 10px;
   &:hover {
     background-color: #ffffff;
     transition: 0.75s;
@@ -55,13 +54,13 @@
   }
   a {
     border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color: #2b243f;
     padding: 10px;
     text-decoration: none;
     color: white;
     position: absolute;
-    width: 218px;
+    width: 298px;
     left: 0;
     text-align: center;
     bottom: 0;
@@ -104,17 +103,23 @@
 
     text-align: center;
 
-    &:hover {
-      
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
 
-    }
-  }
-}
 // cards-container 
 // FORM 
+
+// cards-container
+// FORM
+.container {
+  margin: 0 auto !important;
+  padding: 0!important;
+}
+
+
+
 .cards-container {
+  width: 100vw;
+  margin: 0 auto !important;
+  padding: 0!important;
   .form-container {
     background-color: #ffffff00;
     margin: 0 50px;
@@ -124,7 +129,7 @@
     align-items: center;
     justify-content: center;
     margin: 50px 50px;
-    
+
     .search-input {
       width: 500px;
     }
@@ -144,7 +149,7 @@
       animation-iteration-count: infinite;
     }
 
-      
+
     }
   }
 }
@@ -177,42 +182,42 @@
 
 .shadow-blue {
   &:hover {
-    -webkit-box-shadow: 0px 2px 19px 2px #490df0de; 
+    -webkit-box-shadow: 0px 2px 19px 2px #490df0de;
       box-shadow:  0px 2px 19px 2px #490df0e5;
       animation: shadow-blink 6s infinite;
   }
 }
 .shadow-green {
   &:hover {
-    -webkit-box-shadow:  0px 2px 19px 2px #0df046e1; 
+    -webkit-box-shadow:  0px 2px 19px 2px #0df046e1;
     box-shadow:  0px 2px 19px 2px #0df046da;
     animation: shadow-blink 6s infinite;
   }
 }
 .shadow-pink {
   &:hover {
-    -webkit-box-shadow:  0px 2px 19px 2px #f00db7d8; 
+    -webkit-box-shadow:  0px 2px 19px 2px #f00db7d8;
     box-shadow:  0px 2px 19px 2px #f00db7e1;
     animation: shadow-blink 6s infinite;
   }
 }
 .shadow-purple {
   &:hover {
-    -webkit-box-shadow:  0px 2px 19px 2px #820df0ea; 
+    -webkit-box-shadow:  0px 2px 19px 2px #820df0ea;
     box-shadow:  0px 2px 19px 2px #820df0e1;
     animation: shadow-blink 6s infinite;
   }
 }
 .shadow-yellow {
   &:hover {
-    -webkit-box-shadow:  0px 2px 19px 2px #eede06e8; 
+    -webkit-box-shadow:  0px 2px 19px 2px #eede06e8;
     box-shadow:  0px 2px 19px 2px #eede06e1;
     animation: shadow-blink 6s infinite;
   }
 }
 .shadow-orange {
   &:hover {
-    -webkit-box-shadow:  0px 2px 19px 2px #f07b0de3; 
+    -webkit-box-shadow:  0px 2px 19px 2px #f07b0de3;
     box-shadow:  0px 2px 19px 2px #f07b0dde;
     animation: shadow-blink 6s infinite;
   }

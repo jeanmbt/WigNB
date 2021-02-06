@@ -39,9 +39,14 @@ puts " \n \n "
 
 
 def wig_name_generator
-  possibilities = [ Faker::Name.female_first_name, Faker::Demographic.marital_status, Faker::Cosmere.shard, Faker::Cosmere.metal, Faker::Cosmere.knight_radiant, Faker::Creature::Animal.name, Faker::Games::Pokemon.name, Faker::TvShows::GameOfThrones.house ].sample
-  possibilities_two = [ Faker::Name.female_first_name, Faker::Demographic.marital_status, Faker::Cosmere.shard, Faker::Cosmere.metal, Faker::Cosmere.knight_radiant, Faker::Creature::Animal.name, Faker::Games::Pokemon.name, Faker::TvShows::GameOfThrones.house ].sample
-  "#{possibilities.capitalize} #{possibilities_two.capitalize}"
+  randomize = []
+  10.times do
+    possibilities = [ Faker::Name.female_first_name, Faker::Demographic.marital_status, Faker::Cosmere.shard, Faker::Cosmere.metal, Faker::Cosmere.knight_radiant, Faker::Creature::Animal.name, Faker::Games::Pokemon.name, Faker::TvShows::GameOfThrones.house ].sample
+    possibilities_two = [ Faker::Name.female_first_name, Faker::Demographic.marital_status, Faker::Cosmere.shard, Faker::Cosmere.metal, Faker::Cosmere.knight_radiant, Faker::Creature::Animal.name, Faker::Games::Pokemon.name, Faker::TvShows::GameOfThrones.house ].sample
+    randomize << possibilities
+    randomize << possibilities_two
+  end
+  "#{randomize.sample.capitalize} #{randomize.sample.capitalize}"
 end
 
 def style_generator
