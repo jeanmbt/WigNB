@@ -29,7 +29,7 @@ class WigsController < ApplicationController
 
   def create
     @wig = Wig.new(wig_params)
-    @wig.user = current_user
+    # @wig.user = current_user
     authorize @wig
     @wig.save
     redirect_to wigs_path
@@ -37,15 +37,15 @@ class WigsController < ApplicationController
   
   def edit
     @wig = Wig.find(params[:id])
-    @wig.user = current_user
+    # @wig.user = current_user
     authorize @wig
   end
   
   def update
     @wig = Wig.find(params[:id])
     @wig.user = current_user
-    authorize @wig
     @wig.update(wig_params)
+    authorize @wig
 
     redirect_to wig_path(@wig)
   end
@@ -53,7 +53,7 @@ class WigsController < ApplicationController
   def destroy
     # Not working
     @wig = Wig.find(params[:id])
-    @wig.user = current_user
+    # @wig.user = current_user
     authorize @wig
     @wig.destroy
     redirect_to wigs_path
